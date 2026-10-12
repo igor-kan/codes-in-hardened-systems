@@ -1,8 +1,8 @@
-"""Specification for Qubes OS DisposableVM ephemeral session lifecycle order 63."""
+"""Specification for Qubes OS DisposableVM ephemeral session lifecycle order 69."""
 
-def spec_qubes_dispvm_dispatch_63() -> dict:
-    return {"system": "QubesOS", "spec_id": 63, "source": "work-3", "target": "vault", "action": "ask", "qrexec_service": "qubes.Filecopy"}
+def spec_qubes_dispvm_dispatch_69() -> dict:
+    return {"system": "QubesOS", "spec_id": 69, "source": "work-1", "target": "vault", "action": "ask", "qrexec_service": "qubes.Filecopy"}
 
-def test_spec_qubes_dispvm_dispatch_63():
-    s = spec_qubes_dispvm_dispatch_63()
-    assert s["spec_id"] == 63
+def test_spec_qubes_dispvm_dispatch_69():
+    s = spec_qubes_dispvm_dispatch_69()
+    assert s["spec_id"] == 69
