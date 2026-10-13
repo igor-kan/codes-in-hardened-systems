@@ -1,8 +1,8 @@
-"""Specification for Qubes OS Qrexec RPC inter-VM isolation rule order 152."""
+"""Specification for Qubes OS Qrexec RPC inter-VM isolation rule order 158."""
 
-def spec_qubes_qrexec_policy_152() -> dict:
-    return {"system": "QubesOS", "spec_id": 152, "source": "work-0", "target": "vault", "action": "ask", "qrexec_service": "qubes.Filecopy"}
+def spec_qubes_qrexec_policy_158() -> dict:
+    return {"system": "QubesOS", "spec_id": 158, "source": "work-2", "target": "vault", "action": "ask", "qrexec_service": "qubes.Filecopy"}
 
-def test_spec_qubes_qrexec_policy_152():
-    s = spec_qubes_qrexec_policy_152()
-    assert s["spec_id"] == 152
+def test_spec_qubes_qrexec_policy_158():
+    s = spec_qubes_qrexec_policy_158()
+    assert s["spec_id"] == 158
