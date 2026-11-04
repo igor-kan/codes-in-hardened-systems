@@ -1,0 +1,8 @@
+"""Specification for seL4 microkernel capability CNode slot routing policy order 1698."""
+
+def spec_sel4_cnode_slot_1698() -> dict:
+    return {"system": "seL4", "spec_id": 1698, "cap_rights": 0x07, "cnode_depth": 32, "badge": 162}
+
+def test_spec_sel4_cnode_slot_1698():
+    s = spec_sel4_cnode_slot_1698()
+    assert s["spec_id"] == 1698
