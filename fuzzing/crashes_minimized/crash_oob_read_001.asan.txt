@@ -1,0 +1,15 @@
+=================================================================
+==341902==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55dc0910
+READ of size 4 at 0x55dc0910 thread T0
+    #0 0x55dc08f2 in parse_ipc_message /home/igorkan/repos/codes-in-hardened-systems/fuzzing/harnesses/ipc_cap_fuzz.c:28:9
+    #1 0x55dc08f2 in LLVMFuzzerTestOneInput /home/igorkan/repos/codes-in-hardened-systems/fuzzing/harnesses/ipc_cap_fuzz.c:42:5
+    #2 0x55dc0841 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long)
+    #3 0x55dc081a in fuzzer::RunOneTest(fuzzer::Fuzzer*, char const*, unsigned long)
+
+Triage Notes:
+- Root Cause: Missing uint16_t upper boundary check before payload buffer offset copy.
+- Minimization: Initial crash input 4,096 bytes minimized to 16 bytes via `afl-tmin`.
+- CWE: CWE-125 (Out-of-bounds Read).
+- Mitigation: Enforce `msg.msg_length <= sizeof(msg.payload)` prior to memcpy.
+- Status: Fixed and verified against regression suite.
+=================================================================
